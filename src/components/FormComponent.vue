@@ -1,5 +1,6 @@
 <template>
   <ValidationObserver v-slot="{ handleSubmit }">
+    <h2 class="title">Contact Us</h2>
     <section>
       <div class="container">
         <form ref="anyName" @submit.prevent="handleSubmit(onSubmit)">
@@ -39,7 +40,7 @@
             </div>
           </ValidationProvider>
 
-          <button type="submit">Submit</button>
+          <button type="submit">Subscribe Newsletter</button>
         </form>
       </div>
     </section>
@@ -85,11 +86,15 @@ export default {
   box-sizing: border-box;
   font-family: "Spectral";
 }
+
+.title {
+  text-align: center;
+  font-size: 35px;
+  padding-top: 50px;
+}
+
 section {
-  height: 90vh;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
+  margin: 40px 0px 100px;
 }
 .container {
   width: 90%;
@@ -100,9 +105,8 @@ section {
   border-radius: 8px;
 }
 .form-group {
-  margin-top: 20px;
   font-size: 20px;
-  /* color: #9e9e9e; */
+  margin: 10px 0px;
 }
 .form-group input,
 .form-group textarea {
@@ -112,20 +116,26 @@ section {
   border: 1px solid rgba(128, 128, 128, 0.199);
   margin-top: 5px;
 }
-textarea {
-  resize: vertical;
-}
+
 button {
   width: 100%;
   border: none;
   padding: 20px;
   font-size: 24px;
-  border-radius: 8px;
   cursor: pointer;
   margin-top: 20px;
+  background-color: rgb(188, 188, 52);
+  border-radius: 40px;
 }
 
 .error-text {
   color: red;
+}
+
+@media screen and (max-width: 768px) {
+  .title {
+    font-size: 45px;
+    margin: 20px;
+  }
 }
 </style>
